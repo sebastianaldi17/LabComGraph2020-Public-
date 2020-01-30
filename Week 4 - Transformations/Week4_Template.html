@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <body>
    <canvas width="300" height="300" id="my_Canvas"></canvas>
 
@@ -78,10 +79,9 @@
       gl.vertexAttribPointer(coordinatesVar, 3, gl.FLOAT, false, 0, 0);
       gl.enableVertexAttribArray(coordinatesVar);
 
-
       /*=================Drawing===========================*/
       /*      Modify your transformation matrices here     */
-      var animate = function (time) {
+      function animate() {
          var dt = Date.now() / 1000;
          if (transform == 1) {
             var scale = Math.abs(Math.sin(dt) / 2)
@@ -96,12 +96,14 @@
          } else if (transform == 2) {
             var move = Math.sin(dt) / 2
             var Tx = move, Ty = 0.0, Tz = 0.0
+            // Since we do not want to use the matrix, use an identity matrix to preserve itself
             var xformMatrix = new Float32Array([
                1.0, 0.0, 0.0, 0.0,
                0.0, 1.0, 0.0, 0.0,
                0.0, 0.0, 1.0, 0.0,
                0.0, 0.0, 0.0, 1.0
             ]);
+            // Bind translation (Tx is x translation, Ty is y translation)
             var translation = gl.getUniformLocation(shaderProgram, 'translation')
             gl.uniform4f(translation, Tx, Ty, Tz, 0.0)
          } else if (transform == 3) {
@@ -124,8 +126,8 @@
          gl.clear(gl.COLOR_BUFFER_BIT);
 
          gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
-         window.requestAnimationFrame(animate);
+         window.requestAnimationFrame(animate); // This calls the animate function, repeating it
       }
-      animate(0); // Begins the drawing loop
+      animate(); // Begins the drawing loop
    </script>
 </body>
