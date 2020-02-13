@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <!-- Link Your JavaScript Here! -->
+    <script src="./recap_one.js"></script>
+</head>
+
+<body>
+    <h1 class="text-center">Recap One: Color</h1><br>
+    <h5 class="text-center">Expected Result:</h5>
+    <img src="./img/color_result.png" style="width: 400px; height: 400px; display: block; margin-left: auto; margin-right: auto;">
+    <p class="text-center">Note: Colors will be random (different) every page refresh.</p><br><br>
+    <div class="d-flex justify-content-around" style="margin:128px; margin-top: 0px;">
+        <div class="row">
+            <canvas width = "800" height = "800" id = "color"></canvas>
+        </div>
+    </div>
+    <h1 class="text-center">Recap One: Circle and Polygon</h1><br>
+    <h5 class="text-center">Expected Result:</h5>
+    <img src="./img/circlePolygon_result.png" style="width: 400px; height: 400px; display: block; margin-left: auto; margin-right: auto;">
+    <p class="text-center" style="margin-bottom: 0px;">Hint: You should see a pattern here. These circles and triangles.</p>
+    <p class="text-center">Note: Use for loop, make a function out of this 'semi-fractal' problem.</p><br><br>
+    <div class="d-flex justify-content-around" style="margin:128px; margin-top: 0px;">
+        <div class="row">
+            <canvas width = "800" height = "800" id = "circlePolygon"></canvas>
+        </div>
+    </div>
+    <h1 class="text-center">Recap One: User Interaction</h1><br>
+    <h5 class="text-center">Expected Result:</h5>
+    <img src="./img/userInteraction_result.gif" style="width: 511px; height: 424px; display: block; margin-left: auto; margin-right: auto;">
+    <p class="text-center">Note: The visible 'gaps' are normal. You don't have to fix this issue. Focus on the object generation and callback functions.</p><br><br>
+    <div class="d-flex justify-content-around" style="margin:128px; margin-top: 0px;">
+        <div class="row">
+            <button type="button" class="btn btn-primary" style="margin-right: 16px;">Insert Random Shape</button>
+            <canvas width = "800" height = "800" id = "userInteraction"></canvas>
+        </div>
+    </div>
+</body>
+</html>
