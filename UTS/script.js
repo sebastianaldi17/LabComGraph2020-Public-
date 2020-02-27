@@ -10,7 +10,7 @@
         points   -> How many points around the center will be created (more = smoother circle).
     returns: Array of float (decimal number) that symbolizes coordinates (x, y, z) - Or commonly known as vertices.
 */
-function circlejepri(center_x, center_y, radius, points) {
+function circlejepri2(center_x, center_y, radius, points) {
     var verts = [center_x, center_y, 0]
 
     for (var i = 0; i <= 360; i += 360 / points) {
