@@ -80,9 +80,17 @@ function line(x1, y1, x2, y2, points) {
     var line = [];
     var m = (y2 - y1) / (x2 - x1);
     var b = -m * x1 + y1;
-    var src = Math.min(x1, x2), dst = Math.max(x1, x2);
+    if (x1-x2 == 0) {
+        var src = Math.min(y1, y2), dst = Math.max(y1, y2);
+    } else {
+        var src = Math.min(x1, x2), dst = Math.max(x1, x2);
+    }
     for (var x = src; x < dst; x += (dst - src) / Math.max(12, points)) {
-        line.push(x, m * x + b, 0);
+        if (m == Infinity) {
+            line.push(x1, x, 0);
+        } else {
+            line.push(x, m * x + b, 0);
+        }
     }
     return line;
 }
